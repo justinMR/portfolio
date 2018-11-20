@@ -41,75 +41,87 @@
        <section class="content-area">
          <h1>Portfolio</h1>
          <h3>All links open to a new page. More projects and designs to come!</h3>
+         <!--MODALS BEGIN HERE -->
+
+
+         <div id="myModal" class="modal">
+            <div class="modal-content">
+              <span onclick="closeSpan()"class="close">&times;</span>
+              <p>
+                Placeholder text...will implement modal features soon! 😊
+              </p>
+            </div>
+          </div>
+
          <hr class="animated fadeInLeft">
         <div class="portfolio-container animated bounceInUp">
-          <figure>
+          <figure onclick="modalShow()">
             <img src="imgs/pig-dice-game.PNG" alt="dice game snapshot">
             <figcaption><a href="https://justinmr.github.io/DICE-game/">PIG Dice game</a></figcaption>
             <figcaption>Browser Game</figcaption>
           </figure>
 
-          <figure>
+          <figure onclick="modalShow()">
             <img src="imgs/healthcarevoterorg.png" alt="" width="100%">
             <figcaption><a href="https://healthcarevoter.org/">Healthcarevoter.org</a></figcaption>
             <figcaption>Website</figcaption>
           </figure>
-          <figure>
+          <figure onclick="modalShow()">
             <img src="imgs/fabricbarncorpmin.jpg" alt="Fabric Barn Website" width="100%" >
             <figcaption><a href="https://fabricbarncorp.com/" target="_blank">Fabric Barn Corp.</a></figcaption>
             <figcaption>Website</figcaption>
           </figure>
-          <figure>
+          <figure onclick="modalShow()">
             <img src="imgs/Patatap-1200x825.png" alt=""  width="100%">
             <figcaption><a href="https://justinmr.github.io/patatap-clone/" target="_blank">Patatap-clone</a></figcaption>
             <figcaption>Keyboard Browser Game</figcaption>
           </figure>
-          <figure>
+          <figure onclick="modalShow()">
             <img src="imgs/rgbcolorgamesnip.PNG" alt="" width="100%">
             <figcaption><a href="https://justinmr.github.io/rgb-color-game/" target="_blank">RGB Color Game</a></figcaption>
             <figcaption>Browser Game</figcaption>
           </figure>
-          <figure>
+          <figure onclick="modalShow()">
             <img src="imgs/musicoinheader.PNG" alt="" width="100%">
             <figcaption><a href="https://codepen.io/JustinMR/full/xzedBb/" target="_blank">Musicoin Header</a></figcaption>
             <figcaption>Website contributions</figcaption>
           </figure>
-          <figure>
+          <figure onclick="modalShow()">
             <img src="imgs/musicointrackcard.PNG" alt="" width="100%">
             <figcaption><a href="https://codepen.io/JustinMR/full/vrqwrq/" target="_blank">Musicoin Track Card</a></figcaption>
             <figcaption>Website contributions</figcaption>
           </figure>
-          <figure>
+          <figure onclick="modalShow()">
             <img src="imgs/musicointrackplayer.PNG" alt="" width="100%">
             <figcaption><a href="https://codepen.io/JustinMR/full/pKXEXE/" target="_blank">Musicoin Track Player</a></figcaption>
             <figcaption>Website contributions</figcaption>
           </figure>
-          <figure>
+          <figure onclick="modalShow()">
             <img src="imgs/todolistsnip.PNG" alt="" width="100%">
             <figcaption><a href="https://justinmr.github.io/todolist/" target="_blank">To-do list</a></figcaption>
             <figcaption>Browser to-do list</figcaption>
           </figure>
-          <figure>
+          <figure onclick="modalShow()">
             <img src="imgs/cssgridresponsivesnip.PNG" alt="" width="100%">
             <figcaption><a href="https://justinmr.github.io/cssgridresponsivedesign/" target="_blank">Responsive Grid Sample</a></figcaption>
             <figcaption>Website</figcaption>
           </figure>
-          <figure>
+          <figure onclick="modalShow()">
             <img src="imgs/ra2.png" alt="" width="100%">
             <figcaption><a href="https://codepen.io/JustinMR/full/QBZKrN/" target="_blank">RealAdvisor (Desktop)</a></figcaption>
             <figcaption>Website Proposal</figcaption>
           </figure>
-          <figure>
+          <figure onclick="modalShow()">
             <img src="imgs/mockup.png" alt="" width="100%">
             <figcaption><a href="https://justinmr.github.io/psdtohtmlupwork/" target="_blank">PSD to HTML</a></figcaption>
             <figcaption>Website</figcaption>
           </figure>
-          <figure>
+          <figure onclick="modalShow()">
             <img src="imgs/uno card redesign.png" alt="" width="100%">
             <figcaption><a href="https://www.figma.com/file/NrG0Ps360NAI7wULhRvI3p8E/uno-redesign" target="_blank">Uno-card Redesign</a></figcaption>
             <figcaption>Design</figcaption>
           </figure>
-          <figure>
+          <figure onclick="modalShow()">
             <img src="imgs/Dribbble Shot.png" alt="" width="100%">
             <figcaption><a href="https://www.figma.com/file/Lywk2fptbrSPXdOPYDWDoUTq/flags" target="_blank">Country Flag Redesign</a></figcaption>
             <figcaption>Design</figcaption>
@@ -120,5 +132,6 @@
    </div>
    <!-- <script src="js/jquery-3.3.1.min.js"></script> -->
    <script src="js/hamburgermenu.js"></script>
+   <script src="js/modal.js"></script>
   </body>
 </html>
