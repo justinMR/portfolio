@@ -43,25 +43,14 @@ nav {
   width: 100%;
 }
 
-nav ul {
-  padding: 0;
-  margin: 0;
-}
-nav ul li {
-  margin: 0;
-  padding: 10px;
-  list-style-type: none;
-
-}
-
-nav ul li a {
+nav  a {
   color: #C992FF;
-
-
+  display: block;
+  padding: .5em;
 }
-nav ul li a:hover {
+nav  a:hover {
   color:#FFFF92;
-
+  background-color: #C992FF;
 }
 
 nav ul li:hover {
