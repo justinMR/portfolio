@@ -239,7 +239,38 @@ figcaption a {
 .sidenav {
   display: none;
 }
+/* ICONS  */
 
+.fa-html5 {
+  color: #f06529;
+}
+
+.fa-css3-alt {
+  color: #66ccff;
+}
+
+.fa-js-square {
+  color: #f7df1e;
+  background: black;
+  line-height: .8;
+}
+
+.fa-node {
+  color: #6cc24a;
+  background: #215732;
+  padding: 1px;
+}
+
+.fa-wordpress {
+  color: #21759b;
+}
+
+.fa-react {
+  color: #00d8ff;
+  background: black;
+  line-height: 1;
+  padding: 2px;
+}
 @media only screen and (max-width: 760px) {
   .container {
     display: flex;
