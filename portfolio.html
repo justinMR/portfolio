@@ -9,14 +9,33 @@
     <link rel="icon" type="image/x-icon" href="imgs/favicon.ico" />
     <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/node_modules/light-modal/dist/css/light-modal.min.css">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/main.css">
     <script defer src="js/hamburgermenu.js"></script>
-    <script defer src="js/modal.js"></script>
   </head>
   <body>
 
    <div class="container">
+     <!--****MODAL LIST BEGINS****-->
+     <!--#1 React Components-->
+     <div class="light-modal" id="react-little-components" role="dialog" aria-labelledby="light-modal-label" aria-hidden="false">
+       <div class="light-modal-content animated zoomInUp">
+         <div class="light-modal-header">
+             <h3 class="light-modal-heading">React components</h3>
+             <a href="#" class="light-modal-close-icon" aria-label="close">×</a>
+         </div>
+         <div class="light-modal-body">
+             Just getting practice with some React. 3 little projects 😃.
+
+         </div>
+         <div class="light-modal-footer">
+             <a href="https://codepen.io/collection/nGmMrv/" class="light-modal-close-btn" aria-label="close" target="_blank">Go to project(s)</a>
+         </div>
+       </div>
+     </div>
+
+     <!--****MODAL LIST ENDS****-->
      <aside class="sidemenu">
        <div class="animated bounceInDown profilePhoto">
        </div>
@@ -45,11 +64,17 @@
          <h3>All links open to a new page. More projects and designs to come! 📅</h3>
          <hr class="animated fadeInLeft">
         <div class="animated bounceInUp portfolio-container">
+          <!-- <figure>
+            <a href="#test-id">test</a>
+          </figure> -->
+
+          <a href="#react-little-components">
           <figure>
             <img src="imgs/react-1-logo-png-transparent-min.png" alt="react-logo" width="100%">
             <figcaption><a href="https://codepen.io/collection/nGmMrv/" target="_blank">Collections of React</a></figcaption>
             <figcaption><i class="fab fa-react"></i> React Components</figcaption>
           </figure>
+          </a>
           <figure>
             <img src="imgs/express-nodejs-mongodb-min.jpg" alt="express nodejs mongodb project" width="100%">
             <figcaption><a href="#" target="_blank">Express.js+Mongo.db</a></figcaption>
