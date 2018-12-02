@@ -27,6 +27,19 @@ body {
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
+.bio {
+  text-align: justify;
+}
+
+select {
+  border: 5px solid black;
+  padding: 5px;
+  outline: none;
+  font-family: 'Share Tech Mono', monospace, sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+
 /* MODAL STYLES */
 .light-modal-header{
   background-color: #FF9292;
