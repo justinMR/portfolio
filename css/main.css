@@ -364,3 +364,54 @@ figcaption a {
   .sidenav a {font-size: 18px;}
 }
 }
+
+body:before {
+    content: 'Website update coming soon! 🚀';
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FF9292;
+    padding: 1em;
+    color: #fff;
+    font-size: 1.3em;
+}
+
+@media screen and (max-width: 760px) {
+    body:before {
+    content: 'Website update coming soon! 🚀';
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FF9292;
+    padding: 1em;
+    text-align: center;
+    color: #fff;
+}
+
+}
+
+@media (orientation: landscape) {
+    body:before {
+    content: 'Website update coming soon! 🚀';
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #FF9292;
+    padding: .4em;
+    text-align: center;
+    color: #fff;
+    width: 100%;
+}
+}
+
+
+
