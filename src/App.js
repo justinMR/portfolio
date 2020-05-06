@@ -1,14 +1,34 @@
 import React from "react";
-import "./App.css";
+// import "./App.css";
+//Routes
+import { HashRouter, Switch, Route } from "react-router-dom";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import Portfolio from "./pages/Portfolio";
+import ProjectPage from "./pages/ProjectPage";
+//Nav
+import Nav from "./components/nav/Nav";
+//Syling
+import "bulma/css/bulma.css";
 
 function App() {
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <h1>Justin's CRA Portfolio</h1>
-        <p>Changes coming soon <span role="img" aria-label="sunglass emoji">😎</span></p>
-      </header>
-    </div>
+    <HashRouter>
+      <Nav />
+      <div className='container'>
+        <Switch>
+          <Route exact path='/' component={About}></Route>
+          <Route exact path='/about' component={About}></Route>
+          <Route exact path='/contact' component={Contact}></Route>
+          <Route exact path='/portfolio' component={Portfolio}></Route>
+          <Route
+            exact
+            path='/portfolio/:projectname'
+            component={ProjectPage}
+          ></Route>
+        </Switch>
+      </div>
+    </HashRouter>
   );
 }
 
