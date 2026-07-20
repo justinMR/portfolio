@@ -1,0 +1,27 @@
+# Justin M. Ramirez — Portfolio
+
+> Personal portfolio of Justin M. Ramirez, a senior front-end developer in New York with 7+ years of experience across enterprise platforms and creative agencies. Multi-page, hand-built static site (HTML, SCSS, minimal JS) hosted on GitHub Pages.
+
+Justin specializes in clean, handcrafted CSS, pixel-accurate implementation of high-fidelity designs, accessible semantic HTML, and front-end architecture. He integrates AI coding tools (Cursor, Claude, agentic workflows) into daily development work. Currently a Senior Web Developer at Willkie Farr & Gallagher; open to contract work.
+
+## Sections
+
+- [About](https://justinmr.github.io/): Short professional summary.
+- [Principles](https://justinmr.github.io/principles): Justin's philosophy of the web — platform-first, semantics, accessibility, restraint, handcraft over abstraction.
+- [Experience](https://justinmr.github.io/experience): Work history, most recent first — Willkie Farr & Gallagher (2022–present), Apple via Hogarth Worldwide (2019–2022), Association of National Advertisers (2020–2021), 1199SEIU via Access Staffing (2019), Precision Strategies (2018).
+- [Projects](https://justinmr.github.io/projects): Senneca Diagnostics COVID testing portal (Vue, freelance), [IMDB Movie Search](https://justinmr.github.io/imdb-movie-search/), [Patatap Clone](https://justinmr.github.io/patatap-clone/), [RGB Color Browser Game](https://justinmr.github.io/rgb-color-game/).
+- [Media](https://justinmr.github.io/media): Books, articles, and talks Justin recommends.
+- [Contact](https://justinmr.github.io/contact): Contact form and email (justinmichaelramirez@gmail.com).
+
+## Elsewhere
+
+- GitHub: https://github.com/justinMR
+- LinkedIn: https://www.linkedin.com/in/justinmramirez
+
+## Facts
+
+- Role: Senior Front-end Developer
+- Location: New York, NY
+- Education: Baruch College
+- Skills: HTML, CSS/SCSS, JavaScript, Angular, Vue, jQuery, accessibility (WCAG), responsive design, AI-assisted development
+- Availability: open to contract engagements
