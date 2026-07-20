@@ -9,3 +9,4 @@ Self-hosted Inter and Geist (variable first, static TTF fallback). Filenames mus
 - `geist-semibold.ttf` — Geist 600 fallback
 
 Sources: [Inter](https://rsms.me/inter/), [Geist](https://vercel.com/font)
+
