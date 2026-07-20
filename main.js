@@ -97,31 +97,84 @@
     if (btn && btn !== soundBtn) clickSound();
   });
 
-  // ---- prefetch / prerender pages on nav hover -------------------
-  var speculated = {};
-  function prefetch(href) {
-    if (speculated[href]) return;
-    speculated[href] = true;
-    if (window.HTMLScriptElement && HTMLScriptElement.supports && HTMLScriptElement.supports("speculationrules")) {
-      var s = document.createElement("script");
-      s.type = "speculationrules";
-      s.textContent = JSON.stringify({ prerender: [{ urls: [href] }] });
-      document.head.appendChild(s);
-    } else {
-      var l = document.createElement("link");
-      l.rel = "prefetch";
-      l.href = href;
-      document.head.appendChild(l);
-    }
-  }
-
   // subtle hover blip on interactive elements
   document.addEventListener("pointerover", function (e) {
     var el = e.target.closest("button, .nav-item");
     if (el && !(e.relatedTarget && el.contains(e.relatedTarget))) hoverSound();
-    var a = e.target.closest("a.nav-item");
-    if (a && !a.classList.contains("is-active")) prefetch(a.href);
   });
+
+  // ---- SPA routing (real paths + History API + View Transitions) -
+  var BASE = "/portfolio"; // repo name; update if the repo is renamed
+  var navItems = Array.prototype.slice.call(document.querySelectorAll(".nav-item"));
+  var sections = Array.prototype.slice.call(document.querySelectorAll("[data-section]"));
+
+  var pathToName = {
+    "/": "about",
+    "/principles": "principles",
+    "/experience": "experience",
+    "/projects": "projects",
+    "/media": "media",
+    "/contact": "contact"
+  };
+  var nameToPath = {
+    about: BASE + "/",
+    principles: BASE + "/principles",
+    experience: BASE + "/experience",
+    projects: BASE + "/projects",
+    media: BASE + "/media",
+    contact: BASE + "/contact"
+  };
+  var titles = {
+    about: "Justin M. Ramirez — Senior Front-end Developer",
+    principles: "Principles — Justin M. Ramirez",
+    experience: "Experience — Justin M. Ramirez",
+    projects: "Projects — Justin M. Ramirez",
+    media: "Media — Justin M. Ramirez",
+    contact: "Contact — Justin M. Ramirez"
+  };
+
+  function nameFromLocation() {
+    var path = location.pathname.replace(/\/+$/, ""); // drop trailing slash
+    var rel = path.slice(BASE.length) || "/";         // strip the base
+    return pathToName[rel] || "about";
+  }
+
+  function render(name) {
+    sections.forEach(function (s) { s.hidden = s.dataset.section !== name; });
+    navItems.forEach(function (item) {
+      var active = item.dataset.route === name;
+      item.classList.toggle("is-active", active);
+      if (active) item.setAttribute("aria-current", "page");
+      else item.removeAttribute("aria-current");
+    });
+    document.title = titles[name];
+  }
+
+  function navigate(name) {
+    var run = function () { render(name); };
+    if (document.startViewTransition && !reducedMotion.matches) {
+      document.startViewTransition(run);
+    } else {
+      run();
+    }
+  }
+
+  document.addEventListener("click", function (e) {
+    var link = e.target.closest(".nav-item");
+    if (!link) return;
+    // let modified clicks / new-tab / non-primary buttons behave natively
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    e.preventDefault();
+    var name = link.dataset.route;
+    if (name === nameFromLocation()) return;
+    history.pushState({ section: name }, "", nameToPath[name]);
+    navigate(name);
+  });
+
+  addEventListener("popstate", function () { navigate(nameFromLocation()); });
+
+  // initial paint (after the 404 restore in <head> has run)
+  render(nameFromLocation());
 
   // ---- dialogs ---------------------------------------------------
   document.querySelectorAll("[data-dialog]").forEach(function (btn) {

@@ -129,10 +129,8 @@ textarea {
   }
 }
 
-// Cross-document view transitions — only the swapped content and the nav pill animate
-@view-transition {
-  navigation: auto;
-}
+// Same-document view transitions (triggered via document.startViewTransition in
+// main.js) — only the swapped content and the nav pill animate.
 ::view-transition-old(root),
 ::view-transition-new(root) {
   animation: none;
@@ -368,13 +366,20 @@ main {
   z-index: 1;
 }
 
-// The sliding background — a separate element so only IT morphs, not the text
+// The sliding background — a separate element so only IT morphs, not the text.
+// A pill lives in every nav item, but only the active one is shown and named,
+// so the view transition captures a single element that morphs between tabs.
 .nav-pill {
+  display: none;
   position: absolute;
   inset: 0;
   z-index: 0;
   background: var(--color-surface);
   border-radius: 3px;
+}
+
+.nav-item.is-active .nav-pill {
+  display: block;
   view-transition-name: active-tab;
 }
 
