@@ -262,19 +262,6 @@ main {
   flex-wrap: wrap;
 }
 
-// Fine print, pinned to the top-left corner of the page
-.contract-note {
-  position: absolute;
-  top: 0;
-  right: 0;
-  font-size: 0.7rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-  color: var(--color-accent);
-  border: 1px solid currentColor;
-  padding: 0.1rem 0.6rem;
-}
-
 .header-controls {
   display: flex;
   gap: 0.5rem;
