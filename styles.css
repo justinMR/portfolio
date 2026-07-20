@@ -67,6 +67,7 @@ html {
   font-size: clamp(1rem, 0.92rem + 0.25vw, 1.25rem);
   scrollbar-gutter: stable;
   color-scheme: light;
+  -webkit-text-size-adjust: 100%;
 }
 
 * {
