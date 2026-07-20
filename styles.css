@@ -50,6 +50,7 @@
   --font-body: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --font-display: "Geist", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --space: 1.5rem;
+  transition: --color-bg 150ms ease, --color-text 150ms ease, --color-text-muted 150ms ease, --color-accent 150ms ease, --color-success 150ms ease, --color-border 150ms ease, --color-surface 150ms ease;
 }
 
 [data-theme=dark] {
@@ -63,6 +64,41 @@
   color-scheme: dark;
 }
 
+@property --color-bg {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #fafaf9;
+}
+@property --color-text {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #1c1917;
+}
+@property --color-text-muted {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #6b6660;
+}
+@property --color-accent {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(52% 0.19 27deg);
+}
+@property --color-success {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: oklch(52% 0.14 150deg);
+}
+@property --color-border {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #e4e2df;
+}
+@property --color-surface {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #f2f1ef;
+}
 html {
   font-size: clamp(1rem, 0.92rem + 0.25vw, 1.25rem);
   scrollbar-gutter: stable;
@@ -81,21 +117,13 @@ body {
   line-height: 1.6;
   color: var(--color-text);
   background-color: var(--color-bg);
-  transition: background-color 150ms ease, color 150ms ease;
 }
 
 a,
-button,
-input,
-textarea,
-.contract-note,
 .nav-item,
-.header,
-.section,
-.dialog,
-.form-input,
-.control {
-  transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease;
+.project-link,
+.form-input {
+  transition: color 150ms ease, border-color 150ms ease;
 }
 
 textarea {
@@ -106,6 +134,7 @@ textarea {
   scroll-behavior: stable;
 }
 
+.no-transitions,
 .no-transitions *,
 .no-transitions body {
   transition: none !important;
@@ -169,6 +198,11 @@ a:hover {
 :focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 2px;
+}
+
+::-moz-selection {
+  background: var(--color-accent);
+  color: var(--color-bg);
 }
 
 ::selection {
@@ -369,7 +403,8 @@ main {
   flex: none;
   width: 96px;
   height: 96px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border: 1px solid var(--color-border);
 }
 
@@ -662,6 +697,4 @@ main {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
   }
-}
-
-/*# sourceMappingURL=styles.css.map */
+}/*# sourceMappingURL=styles.css.map */

@@ -62,6 +62,14 @@
   --font-display: "Geist", "Helvetica Neue", Helvetica, Arial, sans-serif;
 
   --space: 1.5rem;
+
+  // Theme colors animate here, at their single source. Every var() consumer
+  // reads the interpolating token, so the whole page changes on one clock —
+  // no per-element color transitions, no inherited-transition compounding.
+  transition:
+    --color-bg 150ms ease, --color-text 150ms ease, --color-text-muted 150ms ease,
+    --color-accent 150ms ease, --color-success 150ms ease,
+    --color-border 150ms ease, --color-surface 150ms ease;
 }
 
 [data-theme="dark"] {
@@ -74,6 +82,17 @@
   --color-surface: #201f1c;
   color-scheme: dark;
 }
+
+// Register the color tokens so they interpolate during transitions. Without
+// this, custom properties are opaque strings and would snap instantly.
+// initial-value mirrors the light defaults (fallback only; :root still wins).
+@property --color-bg         { syntax: "<color>"; inherits: true; initial-value: #fafaf9; }
+@property --color-text       { syntax: "<color>"; inherits: true; initial-value: #1c1917; }
+@property --color-text-muted { syntax: "<color>"; inherits: true; initial-value: #6b6660; }
+@property --color-accent     { syntax: "<color>"; inherits: true; initial-value: oklch(0.52 0.19 27); }
+@property --color-success    { syntax: "<color>"; inherits: true; initial-value: oklch(0.52 0.14 150); }
+@property --color-border     { syntax: "<color>"; inherits: true; initial-value: #e4e2df; }
+@property --color-surface    { syntax: "<color>"; inherits: true; initial-value: #f2f1ef; }
 
 // ---------------------------------------------------------------- base
 html {
@@ -95,22 +114,16 @@ body {
   line-height: 1.6;
   color: var(--color-text);
   background-color: var(--color-bg);
-  transition: background-color 150ms ease, color 150ms ease;
 }
 
-// Theme transition — applied broadly so toggling always animates…
+// Theme changes ride the animated tokens above. These transitions are only
+// for interactive state changes that are NOT theme-driven — hover color and
+// focus border — so those still fade instead of snapping.
 a,
-button,
-input,
-textarea,
-.contract-note,
 .nav-item,
-.header,
-.section,
-.dialog,
-.form-input,
-.control {
-  transition: background-color 150ms ease, color 150ms ease, border-color 150ms ease;
+.project-link,
+.form-input {
+  transition: color 150ms ease, border-color 150ms ease;
 }
 
 textarea {
@@ -121,8 +134,10 @@ textarea {
   scroll-behavior: stable;
 }
 
-// …but never on initial load.
+// …but never on initial load. `&` covers <html> itself, where the tokens
+// animate — otherwise the very first theme resolve could animate on load.
 .no-transitions {
+  &,
   *,
   body {
     transition: none !important;
