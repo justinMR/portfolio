@@ -1,0 +1,10 @@
+# macOS
+.DS_Store
+
+# Editor
+.vscode/*
+!.vscode/settings.json
+
+# Font source archives / raw downloads (only the shipped variable TTFs are tracked)
+fonts/*.zip
+fonts/Geist,Inter/
